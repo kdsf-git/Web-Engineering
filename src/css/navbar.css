@@ -1,0 +1,20 @@
+#navbar {
+	width:100%;
+	border: 2px solid black;
+	overflow:hidden;
+}
+.navbar-float-left {
+	float:left;
+	border: 2px solid red;
+}
+.navbar-middle {
+	float:left;
+	border: 2px solid green;
+}
+.navbar-float-right {
+	float:right;
+	border: 2px solid blue;
+}
+.home-button {
+
+}
