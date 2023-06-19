@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Generic Shop Name</title>
+		<title>Amazan</title>
 		<link rel="stylesheet" href="css/navbar.css">
 		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/api.js"></script>
+		<script type="text/javascript" src="js/home.js"></script>
 	</head>
 	<body>
 		<header>
@@ -46,5 +48,11 @@
 				</div>
 			</div>
 		</header>
+		<div id="categories">
+			<script>
+				let cats = getCategories();
+				addCategories(cats);
+			</script>
+		</div>
 	</body>
 </html>
