@@ -1,15 +1,22 @@
-const mockCategories = [
-	{
-		name:"cat1",
-		image:"images/categories/cat1.jpg"
-	},
-	{
-		name:"cat2",
-		image:"images/categories/cat2.jpg"
-	}
-];
-
 function getCategories() {
 	return mockCategories;
 }
-//apple, samsung, xiaomi, sony
+
+const mockCategories = [
+	{
+		name:"Apple",
+		image:"images/categories/Apple.jpg"
+	},
+	{
+		name:"Samsung",
+		image:"images/categories/Samsung.jpg"
+	},
+	{
+		name:"Xiaomi",
+		image:"images/categories/Xiaomi.jpg"
+	},
+	{
+		name:"Sony",
+		image:"images/categories/Sony.jpg"
+	}
+];
