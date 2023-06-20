@@ -1,7 +1,9 @@
 function submitSearch(event) {
-	alert(document.getElementById("search-bar").value);
+	event.preventDefault();
+	window.location.href = "search.html?q=" + document.getElementById("search-bar").value;
 }
 
 function clickAccount() {
-	alert("clicked on account");
+	alert("TODO");
+	window.location.href = "account.html";
 }

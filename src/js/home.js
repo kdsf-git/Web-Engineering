@@ -1,4 +1,5 @@
-function addCategories(cats) {
+function addCategories() {
+	let cats = getCategories();
 	for(cat of cats) {
 		addCategory(cat);
 	}

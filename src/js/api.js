@@ -2,6 +2,10 @@ function getCategories() {
 	return mockCategories;
 }
 
+function getProducts(query, category, sort, min-price, max-price) {
+	
+}
+
 const mockCategories = [
 	{
 		name:"Apple",

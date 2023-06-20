@@ -5,8 +5,8 @@
 		<title>Amazan</title>
 		<link rel="stylesheet" href="css/navbar.css">
 		<link rel="stylesheet" href="css/home.css">
-		<script type="text/javascript" src="js/navbar.js"></script>
 		<script type="text/javascript" src="js/api.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
 		<script type="text/javascript" src="js/home.js"></script>
 	</head>
 	<body>
@@ -22,7 +22,9 @@
 				<div class="navbar-middle">
 					<form id="search-form">
 						<input type="search" placeholder="Search" id="search-bar">
-						<button class="search-button"><img src="images/search-button.jpg" alt="Search"></button>
+						<button class="search-button">
+							<img src="images/search-button.jpg" alt="Search">
+						</button>
 					</form>
 					<script>
 						document.getElementById("search-form").addEventListener("submit", submitSearch);
@@ -52,8 +54,7 @@
 		<h1>Brands</h1>
 		<div id="categories">
 			<script>
-				let cats = getCategories();
-				addCategories(cats);
+				addCategories();
 			</script>
 		</div>
 	</body>
