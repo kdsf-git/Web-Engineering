@@ -17,6 +17,15 @@ function getProducts(query, category, sort, min_price, max_price) {
 			}
 		}
 	}
+	for(let i = 0; i < products.length; i++) {
+		let text = products[i].name + products[i].description;
+		text = text.toLowerCase();
+		if(!text.includes(query) || products[i].price < min_price || (max_price != 0 && products[i].price > max_price)) {
+			products.splice(i, 1);
+			i--;
+			continue;
+		}
+	}
 	products.sort((a, b) => compareProducts(a, b, sort));
 	return products;
 }
