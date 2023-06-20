@@ -52,12 +52,32 @@ function clickApply() {
 }
 
 function setValues() {
+	let undefParams = false;
 	const urlParams = new URLSearchParams(document.location.search);
 	document.getElementById("search-bar").value = urlParams.get("q");
-	document.getElementById("category").value = urlParams.get("category");
-	document.getElementById("sort").value = urlParams.get("sort");
-	document.getElementById("min-price").value = urlParams.get("min-price");
-	document.getElementById("max-price").value = urlParams.get("max-price");
+	if(urlParams.get("category")) {
+		document.getElementById("category").value = urlParams.get("category");
+	} else {
+		undefParams = true;
+	}
+	if(urlParams.get("sort")) {
+		document.getElementById("sort").value = urlParams.get("sort");
+	} else {
+		undefParams = true;
+	}	
+	if(urlParams.get("min-price")) {
+		document.getElementById("min-price").value = urlParams.get("min-price");
+	} else {
+		undefParams = true;
+	}
+	if(urlParams.get("max-price")) {
+		document.getElementById("max-price").value = urlParams.get("max-price");
+	} else {
+		undefParams = true;
+	}
+	if(undefParams) {
+		clickApply();
+	}
 }
 
 window.onload = setValues;

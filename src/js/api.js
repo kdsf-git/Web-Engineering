@@ -60,9 +60,18 @@ function compareProducts(a, b, sort) {
 	}
 }
 
-function addToCart() {
-	alert("TODO");
-	//alert("Added to cart");
+function addToCart(id) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(u of mockUsers) {
+		if(u.session = getCookie("session")) {
+			u.cart.push(id);
+			localStorage.mockUsers = JSON.stringify(mockUsers);
+			window.location.href = "cart.html";
+			return;
+		}
+	}
+	alert("You are not logged in. You will be redirected to the login page");
+	window.location.href = "login.html";
 }
 
 function login(email, password) {
@@ -70,7 +79,7 @@ function login(email, password) {
 	for(u of mockUsers) {
 		if(u.email == email) {
 			if(u.password == password) {
-				const session = crypto.randumUUID();
+				const session = crypto.randomUUID();
 				document.cookie = "session=" + session + "; Path=/;"
 				u.session = session;
 				localStorage.mockUsers = JSON.stringify(mockUsers);
@@ -101,7 +110,6 @@ function signup(email, password) {
 	newUser.name = "";
 	newUser.password = password;
 	newUser.email = email;
-	newUser.session = crypto.randomUUID();
 	let newAddress = {};
 	newAddress.name = "";
 	newAddress.streetaddress = "";
@@ -126,6 +134,54 @@ function checkCookie() {
 		}
 	}
 	return false;
+}
+
+function getCountries() {
+	return mockCountries;
+}
+
+function getUser() {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(u of mockUsers) {
+		if(u.session == getCookie("session")) {
+			u.password = null;
+			u.session = null;
+			return u;
+		}
+	}
+}
+
+function logout() {
+	document.cookie = "session=; Path=/; Expires=Thu, 01 Jan1970 00:00:01 GMT;";
+	document.location.href = "login.html";
+}
+
+function updateUserInfo(user) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			mockUsers[i].name = user.name;
+			mockUsers[i].email = user.email;
+			mockUsers[i].address = user.address;
+			localStorage.mockUsers = JSON.stringify(mockUsers);
+			return;
+		}
+	}
+	alert("Could not save changes");
+}
+
+function updatePassword(password) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			if(password) {
+				mockUsers[i].password = password;
+				localStorage.mockUsers = JSON.stringify(mockUsers);
+			}
+			window.location.href = "index.html";
+			return;
+		}
+	}
 }
 
 function getCookie(name) {

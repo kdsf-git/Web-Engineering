@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sadzon - Account</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/account.css">
+		<script type="text/javascript" src="js/api.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/account.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="navbar">
+				<div class="navbar-float-left">
+					<div id="home-button">
+						<a href="index.html">
+							<img class="navbar-image" src="images/home-button.jpg" alt="Homepage">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-middle">
+					<form id="search-form">
+						<input type="search" placeholder="Search" id="search-bar">
+						<button class="search-button">
+							<img class="navbar-image" src="images/search-button.jpg" alt="Search">
+						</button>
+					</form>
+					<script>
+						document.getElementById("search-form").addEventListener("submit", submitSearch);
+					</script>
+				</div>
+				<div class="navbar-float-right">
+					<div id="terms-button">
+						<a href="terms.html">
+							<img class="navbar-image" src="images/terms-button.jpg" alt="Terms of Use">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="user-button">
+						<a href="account.html">
+							<img class="navbar-image" src="images/user-button.jpg" alt="Account">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="cart-button">
+						<a href="cart.html">
+							<img class="navbar-image" src="images/cart-button.jpg" alt="Shopping Cart">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<h1>Profile</h1>
+		<div id="name-div">
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name">
+		</div>
+		<div id="email-div">
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email">
+		</div>
+		<div id="address-div">
+			<label for="inner-address-div">Address:</label>
+			<div name="inner-address-div">
+				<div id="address-name-div">
+					<label for="address-name">Name:</label>
+					<input type="text" name="address-name" id="address-name">
+				</div>
+				<div id="address-street-div">
+					<label for="address-street">Street address:</label>
+					<input type="text" name="address-street" id="address-street">
+				</div>
+				<div id="address-city-div">
+					<label for="address-city">City:</label>
+					<input type="text" name="address-city" id="address-city">
+				</div>
+				<div id="address-zip-div">
+					<label for="address-zip">ZIP Code:</label>
+					<input type="text" name="address-zip" id="address-zip">
+				</div>
+				<div id="address-country-div">
+					<label for="address-country">Country:</label>
+					<select name="address-country" id="address-country">
+						<script>
+							addCountryOptions();
+						</script>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div id="password-div">
+			<label for="password">New password:</label>
+			<input type="password" name="password" id="password" placeholder="New password">
+		</div>
+		<div id="button-div">
+			<button id="save-button" onclick="clickSave()">Save Changes</button>
+			<button id="logout-button" onclick="clickLogout()">Logout</button>
+		</div>
+	</body>
+</html>
