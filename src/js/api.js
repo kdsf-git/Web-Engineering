@@ -62,9 +62,9 @@ function compareProducts(a, b, sort) {
 
 function addToCart(id) {
 	mockUsers = JSON.parse(localStorage.mockUsers);
-	for(u of mockUsers) {
-		if(u.session = getCookie("session")) {
-			u.cart.push(id);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			mockUsers[i].cart.push(id);
 			localStorage.mockUsers = JSON.stringify(mockUsers);
 			window.location.href = "cart.html";
 			return;
@@ -76,12 +76,12 @@ function addToCart(id) {
 
 function login(email, password) {
 	mockUsers = JSON.parse(localStorage.mockUsers);
-	for(u of mockUsers) {
-		if(u.email == email) {
-			if(u.password == password) {
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].email == email) {
+			if(mockUsers[i].password == password) {
 				const session = crypto.randomUUID();
 				document.cookie = "session=" + session + "; Path=/;"
-				u.session = session;
+				mockUsers[i].session = session;
 				localStorage.mockUsers = JSON.stringify(mockUsers);
 				window.location.href = "index.html";
 				return;
@@ -182,6 +182,23 @@ function updatePassword(password) {
 			return;
 		}
 	}
+}
+
+function getCartContents() {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			return mockUsers[i].cart;
+		}
+	}
+}
+
+function getShippingCost() {
+	return 19.99;
+}
+
+function checkout() {
+	window.location.href = "checkout.html";
 }
 
 function getCookie(name) {
