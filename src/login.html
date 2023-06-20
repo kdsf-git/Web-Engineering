@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sadzon - Login</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/login.css">
+		<script type="text/javascript" src="js/api.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="navbar">
+				<div class="navbar-float-left">
+					<div id="home-button">
+						<a href="index.html">
+							<img class="navbar-image" src="images/home-button.jpg" alt="Homepage">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-middle">
+					<form id="search-form">
+						<input type="search" placeholder="Search" id="search-bar">
+						<button class="search-button">
+							<img class="navbar-image" src="images/search-button.jpg" alt="Search">
+						</button>
+					</form>
+					<script>
+						document.getElementById("search-form").addEventListener("submit", submitSearch);
+					</script>
+				</div>
+				<div class="navbar-float-right">
+					<div id="terms-button">
+						<a href="terms.html">
+							<img class="navbar-image" src="images/terms-button.jpg" alt="Terms of Use">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="user-button">
+						<a href="account.html">
+							<img class="navbar-image" src="images/user-button.jpg" alt="Account">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="cart-button">
+						<a href="cart.html">
+							<img class="navbar-image" src="images/cart-button.jpg" alt="Shopping Cart">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<h1>Login</h1>
+		<div id="login-div">
+			<div id="email-div">
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" placeholder="Email">
+			</div>
+			<div id="password-div">
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" placeholder="Password">
+			</div>
+			<div id="button-div">
+				<button id="login-button" onclick="clickLogin()">Login</button>
+				<button id="signup-button" onclick="clickSignUp()">Sign up</button>
+			</div>
+		</div>
+	</body>
+</html>

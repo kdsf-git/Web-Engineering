@@ -62,7 +62,94 @@ function compareProducts(a, b, sort) {
 
 function addToCart() {
 	alert("TODO");
+	//alert("Added to cart");
 }
+
+function login(email, password) {
+	for(u of mockUsers) {
+		if(u.email == email) {
+			if(u.password == password) {
+				document.cookie = "session=" + crypto.randomUUID() + "; Path=/;"
+				window.location.href = "index.html";
+				return;
+			} else {
+				break;
+			}
+		}
+	}
+	alert("Invalid credentials");
+}
+
+function signup(email, password) {
+	if(password == "") {
+		alert("Password cannot be empty");
+		return;
+	}
+	for(u of mockUsers) {
+		if(u.email == email) {
+			alert("Email already in use");
+			return;
+		}
+	}
+	let newUser = {};
+	newUser.id = mockUsers.length;
+	newUser.name = "";
+	newUser.password = password;
+	newUser.email = email;
+	newUser.session = crypto.randomUUID();
+	let newAddress = {};
+	newAddress.name = "";
+	newAddress.streetaddress = "";
+	newAddress.city = "";
+	newAddress.zip = "";
+	newAddress.country = "belgium";
+	newUser.address = newAddress;
+	newUser.cart = [];
+	document.cookie = "session=" + crypto.randomUUID() + "; Path=/;"
+	window.location.href = "account.html";
+}
+
+function checkCookie() {
+	alert(document.cookie);
+	return true;
+}
+
+let mockUsers = [
+	{
+		id:0,
+		name:"John Doe",
+		password:"1234",
+		email:"j.doe@example.com",
+		session:null,
+		address:{
+				name:"John Doe",
+				streetaddress:"Nowhere Ave. 42",
+				city:"Nonetown",
+				zip:"01234",
+				country:"belgium",
+			},
+		cart:[]
+	}
+];
+
+const mockCountries = [
+	{
+		value:"germany",
+		text:"Germany"
+	},
+	{
+		value:"belgium",
+		text:"Belgium"
+	},
+	{
+		value:"poland",
+		text:"Poland"
+	},
+	{
+		value:"uk",
+		text:"United Kingdom"
+	}
+]
 
 const mockCategories = [
 	{
