@@ -3,7 +3,6 @@ function getCategories() {
 }
 
 function getProducts(query, category, sort, min_price, max_price) {
-	alert("TODO");
 	let products = [];
 	if(category == "all") {
 		for(c of mockCategories) {
