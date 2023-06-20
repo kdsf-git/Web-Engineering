@@ -1,0 +1,11 @@
+/* home.css */
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-button img {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 150px;
+}

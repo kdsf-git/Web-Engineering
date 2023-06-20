@@ -1,0 +1,11 @@
+/* search.css */
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product img {
+    padding: 30px;
+    box-sizing: border-box;
+    width: 25%;
+}
