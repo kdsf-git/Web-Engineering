@@ -2,34 +2,38 @@
 	width:100%;
 	border: 2px solid black;
 	overflow:hidden;
+	height:50px;
 }
 .navbar-float-left {
 	float:left;
 	border: 2px solid red;
+	height:50px;
 }
 .navbar-middle {
 	float:left;
 	border: 2px solid green;
+	height:50px;
 }
 .navbar-float-right {
 	float:right;
 	border: 2px solid blue;
+	height:50px;
 }
 #home-button {
-
+	height:50px;
 }
 #search-form {
-
-}
-#search-bar {
-
+	height:50px;
 }
 #terms-button {
-
+	height:50px;
 }
 #user-button {
-
+	height:50px;
 }
 #cart-button {
-
+	height:50px;
+}
+img.navbar-image {
+	height:50px;
 }
