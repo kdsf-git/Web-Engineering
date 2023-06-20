@@ -29,6 +29,16 @@ function getProducts(query, category, sort, min_price, max_price) {
 	return products;
 }
 
+function getProductById(id) {
+	for(c of mockCategories) {
+		for(p of c.products) {
+			if(p.id == id) {
+				return p;
+			}
+		}
+	}
+}
+
 function compareProducts(a, b, sort) {
 	switch(sort) {
 		case "price-lowest-first":
@@ -48,6 +58,10 @@ function compareProducts(a, b, sort) {
 			}
 			return 0;
 	}
+}
+
+function addToCart() {
+	alert("TODO");
 }
 
 const mockCategories = [
