@@ -1,0 +1,19 @@
+/* product.css */
+#product-image {
+    padding: 30px;
+    box-sizing: border-box;
+    width: 25%;
+}
+
+#product-price {
+    font-size: 45px;
+}
+
+#product-image-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#product-description-container {
+    margin-top: 10px;
+}
