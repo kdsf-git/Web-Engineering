@@ -1,0 +1,17 @@
+/* login.css */
+#login-div div {
+    padding-bottom: 10px;
+}
+
+#email-div label {
+    padding-right: 25px;
+}
+
+#password-div label {
+    padding-right: 2px;
+}
+
+#button-div button {
+    width: 120px;
+    padding-right: 20px;
+}
