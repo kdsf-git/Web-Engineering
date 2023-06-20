@@ -1,11 +1,53 @@
 /* search.css */
-#product-list {
+
+#not-navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+}
+
+#sort-filter {
     display: flex;
     flex-wrap: wrap;
+    width: 150px;
+    height: 50px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+}
+
+#sort-filter input {
+    width: 125px;
+}
+
+#sort-filter select {
+    width: 133px;
+}
+
+#sort-filter label {
+    padding-top: 20px;
+}
+
+
+#product-list {
+    padding: 10px;
+    width: 100%;
 }
 
 .product img {
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
-    width: 25%;
+    width: 300px; 
+}
+
+.product p {
+    height: 20px;
+    overflow: hidden;
+}
+
+.product {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
