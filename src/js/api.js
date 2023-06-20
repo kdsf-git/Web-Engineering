@@ -66,10 +66,14 @@ function addToCart() {
 }
 
 function login(email, password) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
 	for(u of mockUsers) {
 		if(u.email == email) {
 			if(u.password == password) {
-				document.cookie = "session=" + crypto.randomUUID() + "; Path=/;"
+				const session = crypto.randumUUID();
+				document.cookie = "session=" + session + "; Path=/;"
+				u.session = session;
+				localStorage.mockUsers = JSON.stringify(mockUsers);
 				window.location.href = "index.html";
 				return;
 			} else {
@@ -81,6 +85,7 @@ function login(email, password) {
 }
 
 function signup(email, password) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
 	if(password == "") {
 		alert("Password cannot be empty");
 		return;
@@ -92,7 +97,7 @@ function signup(email, password) {
 		}
 	}
 	let newUser = {};
-	newUser.id = mockUsers.length;
+	newUser.id = JSON.parse(localStorage.mockUsers).length;
 	newUser.name = "";
 	newUser.password = password;
 	newUser.email = email;
@@ -105,13 +110,33 @@ function signup(email, password) {
 	newAddress.country = "belgium";
 	newUser.address = newAddress;
 	newUser.cart = [];
-	document.cookie = "session=" + crypto.randomUUID() + "; Path=/;"
+	let session = crypto.randomUUID();
+	document.cookie = "session=" + session + "; Path=/;"
+	newUser.session = session;
+	mockUsers.push(newUser);
+	localStorage.mockUsers = JSON.stringify(mockUsers);
 	window.location.href = "account.html";
 }
 
 function checkCookie() {
-	alert(document.cookie);
-	return true;
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(u of mockUsers) {
+		if(u.session = getCookie("session")) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
 }
 
 let mockUsers = [
@@ -287,3 +312,9 @@ description:"XIAOMI Redmi A1 Smartphone (6.52 inches, 32GB storage space, 5000 m
 ]
 	}
 ];
+
+if(!localStorage.mockUsers) {
+	localStorage.mockUsers = JSON.stringify(mockUsers);
+} else {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+}
