@@ -66,5 +66,5 @@
 /* Stil für die letzten 3 Icons */
 .navbar-float-right:nth-last-child(-n+3) {
     margin-left: 0px; 
-    margin-right: 15px; 
+    margin-right: 20px; 
 }
