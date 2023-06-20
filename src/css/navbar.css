@@ -9,6 +9,7 @@
 	border-width: 1px;
 	border-style: solid;
     border-radius: 20px;
+    width: 100%;
 }
 
 .navbar-float-left,
@@ -17,6 +18,10 @@
     height: 75px;
     display: flex;
     align-items: center;
+}
+
+.navbar-middle {
+    width: 70%;
 }
 
 .navbar-image {
@@ -36,8 +41,12 @@
     align-items: center;
 }
 
+#search-form {
+    width: 80%;
+}
+
 #search-bar {
-    width: 700px;
+    width: 100%;
     height: 40px;
     padding: 5px;
     border: black;
@@ -52,7 +61,6 @@
     border: none;
     cursor: pointer;
     margin-left: 5px;
-    margin-right: 230px;
 }
 
 /* Stil für die letzten 3 Icons */
