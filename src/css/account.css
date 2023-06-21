@@ -5,7 +5,8 @@ h1 {
 }
 
 #page-content div {
-    padding-left: 10px
+    padding-left: 10px;
+    width: 90%;
 }
 
 #name-div {
@@ -22,6 +23,7 @@ h1 {
 #address-div {
     padding-left: 1%;
     display: flex;
+    width: 90%;
 }
 
 #password-div {
@@ -44,7 +46,7 @@ h1 {
 	border-width: 1px;
 	border-style: solid;
     border-radius: 10px;
-    width: 285px;
+    width: 80%;
 }
 
 [name="inner-address-div"] div {
@@ -65,7 +67,7 @@ h1 {
 }
 
 label {
-    width: 100px;
+    width: 150px;
 }
 
 #page-content {
@@ -73,7 +75,7 @@ label {
 	border-style: solid;
     border-radius: 20px;
     background-color: #fff;
-    width: 30%;
+    width: 40%;
 }
 
 html {
