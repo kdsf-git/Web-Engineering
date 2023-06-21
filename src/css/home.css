@@ -4,6 +4,17 @@
     flex-wrap: wrap;
 }
 
+html {
+    text-align: center;
+    background-color: #D8D8D8;
+}
+
+.category-button {
+	border-style: solid;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
 .category-button img {
     padding: 10px;
     box-sizing: border-box;

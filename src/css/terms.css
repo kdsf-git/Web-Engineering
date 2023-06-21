@@ -5,4 +5,12 @@ h1 {
 
 p {
     text-align: center;
+    border-width: 1px;
+	border-style: solid;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+html {
+    background-color: #D8D8D8;
 }

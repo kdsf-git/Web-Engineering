@@ -1,42 +1,61 @@
 /* search.css */
 
+html {
+    background-color: #D8D8D8;
+}
+
 #not-navbar {
     display: flex;
     flex-wrap: nowrap;
     padding-top: 20px;
+    width: 100%;
 }
 
 #sort-filter {
     display: flex;
     flex-wrap: wrap;
     width: 10%;
-    height: 50px;
+    height: 260px;
     padding-bottom: 10px;
     padding-right: 50px;
+    border-width: 1px;
+	border-style: solid;
+    border-radius: 20px;
+    background-color: #fff;
+    padding-left: 10px;
 }
 
 #sort-filter input {
-    width: 125px;
+    width: 100%;
 }
 
 #sort-filter select {
-    width: 133px;
+    width: 100%;
 }
 
 #sort-filter label {
     padding-top: 20px;
 }
 
+#sort-filter button {
+    margin-bottom: 10px;
+}
 
 #product-list {
     padding: 10px;
+    width: 90%;
+}
+
+.product div {
     width: 100%;
+    align-self: center;
+    justify-content: left;
 }
 
 .product img {
     padding: 10px;
     box-sizing: border-box;
-    width: 300px; 
+    width: 30%;
 }
 
 .product p {
@@ -44,10 +63,17 @@
     overflow: hidden;
 }
 
+.product a {
+    width: 100%;
+}
+
 .product {
     padding: 10px;
-    box-sizing: border-box;
-    width: 100%;
+    width: 99%;
     display: flex;
     flex-wrap: nowrap;
+    border-width: 1px;
+	border-style: solid;
+    border-radius: 20px;
+    background-color: #fff;
 }

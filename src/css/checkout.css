@@ -1,36 +1,39 @@
-/* product.css */
-#product-image {
-    padding: 30px;
-    box-sizing: border-box;
-    width: 25%;
+/* checkout.css */
+label{
+    padding-left: 10px;
 }
 
-#product-price {
-    font-size: 45px;
+p {
+    padding-left: 10px;
 }
 
-#product-image-info {
+#order-details {
     display: flex;
     flex-wrap: wrap;
 }
 
-#product-description {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-#product-image-info {
+#left-column {
     border-width: 1px;
 	border-style: solid;
     border-radius: 20px;
     background-color: #fff;
+    width: 300px;
 }
 
-#product-description {
+#right-column {
     border-width: 1px;
 	border-style: solid;
     border-radius: 20px;
     background-color: #fff;
+    width: 30%;
+}
+
+#total-div {
+    border-width: 1px;
+	border-style: solid;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 20%;
 }
 
 html {
