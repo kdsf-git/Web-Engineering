@@ -49,6 +49,7 @@ label {
 
 #total-div{
     padding: 10px;
+    min-width: 200px;
     width: 15%;
     height: 120px;
     border-width: 1px;
