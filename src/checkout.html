@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sadzon - Checkout</title>
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/checkout.css">
+		<script type="text/javascript" src="js/api.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/checkout.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="navbar">
+				<div class="navbar-float-left">
+					<div id="home-button">
+						<a href="index.html">
+							<img class="navbar-image" src="images/home-button.jpg" alt="Homepage">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-middle">
+					<form id="search-form">
+						<input type="search" placeholder="Search" id="search-bar">
+						<button class="search-button">
+							<img class="navbar-image" src="images/search-button.jpg" alt="Search">
+						</button>
+					</form>
+					<script>
+						document.getElementById("search-form").addEventListener("submit", submitSearch);
+					</script>
+				</div>
+				<div class="navbar-float-right">
+					<div id="terms-button">
+						<a href="terms.html">
+							<img class="navbar-image" src="images/terms-button.jpg" alt="Terms of Use">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="user-button">
+						<a href="account.html">
+							<img class="navbar-image" src="images/user-button.jpg" alt="Account">
+						</a>
+					</div>
+				</div>
+				<div class="navbar-float-right">
+					<div id="cart-button">
+						<a href="cart.html">
+							<img class="navbar-image" src="images/cart-button.jpg" alt="Shopping Cart">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<h1>Checkout</h1>
+		<div id="order-details">
+			<div id="left-column">
+				<p>Ship to:</p>
+				<div id="address-div">
+					<div id="name-div">
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name">
+					</div>
+					<div id="street-div">
+						<label for="street">Street Address:</label>
+						<input type="text" id="street" name="street">
+					</div>
+					<div id="city-div">
+						<label for="city">City:</label>
+						<input type="text" id="city" name="city">
+					</div>
+					<div id="zip-div">
+						<label for="zip">ZIP Code:</label>
+						<input type="text" id="zip" name="zip">
+					</div>
+					<div id="country-div">
+						<label for="country">Country:</label>
+						<select id="country" name="country">
+							<script>
+								addCountryOptions();
+							</script>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div id="right-column">
+				<p>Pay with:</p>
+				<fieldset id="radio-group">
+					<script>
+						addPaymentOptions();
+					</script>
+				</fieldset>
+			</div>
+		</div>
+		<div id="total-div">
+			<label for="total">Order Total:</label>
+			<p id="total" name="total"></p>
+		</div>
+		<button id="confirm-button" onclick="clickConfirm()">Confirm and pay</button>
+	</body>
+</html>

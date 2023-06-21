@@ -26,9 +26,15 @@ function addProducts() {
 		pA1.appendChild(pImg);
 		pA2.appendChild(pName);
 
+		let pButton = document.createElement("button");
+		pButton.setAttribute("class", "remove-button");
+		pButton.setAttribute("onclick", "clickRemove(" + p.id + ")");
+		pButton.appendChild(document.createTextNode("Remove"));
+
 		pDivRight.appendChild(pA2);
 		pDivRight.appendChild(pDescription);
 		pDivRight.appendChild(pPrice);
+		pDivRight.appendChild(pButton);
 
 		pDiv.appendChild(pA1);
 		pDiv.appendChild(pDivRight);
@@ -41,8 +47,21 @@ function clickCheckout() {
 	checkout();
 }
 
+function clickRemove(id) {
+	removeProductFromCart(id);
+	window.location.reload();
+}
+
 function setValues() {
+	if(!checkCookie()) {
+		window.location.href = "login.html";
+		return;
+	}
 	const pIds = getCartContents();
+	if(!pIds) {
+		window.location.href = "login.html";
+		return;
+	}
 	let sum = 0;
 	for(pId of pIds) {
 		const p = getProductById(pId);

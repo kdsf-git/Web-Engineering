@@ -12,7 +12,11 @@ function addCategory(cat) {
 	let catImg = document.createElement("img");
 	catImg.setAttribute("src", cat.image);
 	catImg.setAttribute("alt", cat.name);
-	
-	catDiv.appendChild(catImg);
+
+	let catA = document.createElement("a");
+	catA.setAttribute("href", "search.html?category=" + cat.name);
+	catA.appendChild(catImg);
+
+	catDiv.appendChild(catA);
 	document.getElementById("categories").appendChild(catDiv);
 }

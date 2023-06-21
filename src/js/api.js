@@ -198,7 +198,99 @@ function getShippingCost() {
 }
 
 function checkout() {
-	window.location.href = "checkout.html";
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			if(mockUsers[i].cart.length == 0) {
+				alert("Cart is empty");
+				window.location.reload();
+				return;
+			}
+			window.location.href = "checkout.html";
+			return;
+		}
+	}
+	window.location.href = "login.html";
+}
+
+function removeProductFromCart(id) {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			for(let j = 0; j < mockUsers[i].cart.length; j++) {
+				if(mockUsers[i].cart[j] == id) {
+					mockUsers[i].cart.splice(j, 1);
+					break;
+				}
+			}
+			localStorage.mockUsers = JSON.stringify(mockUsers);
+			return;
+		}
+	}
+}
+
+function getPaymentOptions() {
+	return mockPaymentOptions;
+}
+
+function confirmOrder(name, street, city, zip, country, payment_option) {
+	if(!name || !street || !city || !zip || !country || !payment_option) {
+		alert("All fields are required");
+		return;
+	}
+	let str = "Order details:\n\n";
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			if(mockUsers[i].cart.length == 0) {
+				window.location.href = "cart.html";
+				return;
+			}
+			str +="Ship to:\n"
+			str += "Name: " + name + "\n";
+			str += "Street address : " + street + "\n";
+			str += "City: " + city + "\n";
+			str += "ZIP Code: " + zip + "\n";
+			for(c of getCountries()) {
+				if(c.value == country) {
+					country = c.text;
+				}
+			}
+			str += "Country: " + country + "\n\n";
+			for(p of getPaymentOptions()) {
+				if(p.value == payment_option) {
+					payment_option = p.text;
+				}
+			}
+			str += "Pay with: " + payment_option + "\n\n";
+			str += "Items:\n";
+			for(let j = 0; j < mockUsers[i].cart.length; j++) {
+				str += getProductById(mockUsers[i].cart[j]).name + "\n";
+			}
+			alert(str);
+			mockUsers[i].cart = [];
+			localStorage.mockUsers = JSON.stringify(mockUsers);
+
+			window.location.href = "index.html";
+			return;
+		}
+	}
+	window.location.href = "index.html";
+}
+
+function getCartTotal() {
+	mockUsers = JSON.parse(localStorage.mockUsers);
+	for(let i = 0; i < mockUsers.length; i++) {
+		if(mockUsers[i].session == getCookie("session")) {
+			let sum = 0.00;
+			for(let j = 0; j < mockUsers[i].cart.length; j++) {
+				sum += getProductById(mockUsers[i].cart[j]).price;
+			}
+			sum += getShippingCost();
+			return sum;
+		}
+	}
+	return 0.00;
 }
 
 function getCookie(name) {
@@ -211,6 +303,21 @@ function getCookie(name) {
     }
     return null;
 }
+
+const mockPaymentOptions = [
+	{
+		value:"paypal",
+		text:"PayPal"
+	},
+	{
+		value:"credit",
+		text:"Credit Card"
+	},
+	{
+		value:"klarna",
+		text:"Klarna"
+	}
+]
 
 let mockUsers = [
 	{
