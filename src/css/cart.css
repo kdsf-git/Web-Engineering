@@ -60,17 +60,17 @@ label {
 
 #item-div {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 #shipping-div {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 #totaltotal-div {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 #page-content {
