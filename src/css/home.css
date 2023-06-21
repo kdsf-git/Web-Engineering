@@ -20,3 +20,7 @@ html {
     box-sizing: border-box;
     height: 150px;
 }
+
+.category-button:hover img {
+    transform: scale(103%);
+}
