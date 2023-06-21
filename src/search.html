@@ -53,29 +53,31 @@
 				</div>
 			</div>
 		</header>
-		<div id="sort-filter">
-			<label for="category">Brand</label>
-			<select name="category" id="category">
-				<option value="all">All</option>
+		<div id="page-content">
+			<div id="sort-filter">
+				<label for="category">Brand</label>
+				<select name="category" id="category">
+					<option value="all">All</option>
+					<script>
+						addCategoryOptions();
+					</script>
+				</select>
+				<label for="sort">Sort by</label>
+				<select name="sort" id="sort">
+					<option value="price-lowest-first">Price (lowest first)</option>
+					<option value="price-highest-first">Price (highest first)</option>
+				</select>
+				<label for="min-price">Minimum Price</label>
+				<input type="number" name="min-price" id="min-price" min="0" value="0">
+				<label for="max-price">Maximum Price</label>
+				<input type="number" name="max-price" id="max-price" min="0" value="0">
+				<button id="apply-button" onclick="clickApply()">Apply</button>
+			</div>
+			<div id="product-list">
 				<script>
-					addCategoryOptions();
+					addProducts();
 				</script>
-			</select>
-			<label for="sort">Sort by</label>
-			<select name="sort" id="sort">
-				<option value="price-lowest-first">Price (lowest first)</option>
-				<option value="price-highest-first">Price (highest first)</option>
-			</select>
-			<label for="min-price">Minimum Price</label>
-			<input type="number" name="min-price" id="min-price" min="0" value="0">
-			<label for="max-price">Maximum Price</label>
-			<input type="number" name="max-price" id="max-price" min="0" value="0">
-			<button id="apply-button" onclick="clickApply()">Apply</button>
-		</div>
-		<div id="product-list">
-			<script>
-				addProducts();
-			</script>
+			</div>
 		</div>
 	</body>
 </html>
