@@ -47,7 +47,7 @@ html {
 }
 
 .product div {
-    width: 50%;
+    width: 100%;
     align-self: center;
     justify-content: left;
 }
