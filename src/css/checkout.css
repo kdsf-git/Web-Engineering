@@ -1,6 +1,7 @@
 /* checkout.css */
 label{
     padding-left: 10px;
+    width: 40%;
 }
 
 p {
@@ -17,7 +18,7 @@ p {
 	border-style: solid;
     border-radius: 20px;
     background-color: #fff;
-    width: 300px;
+    width: 30%;
 }
 
 #right-column {
