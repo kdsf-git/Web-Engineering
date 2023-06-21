@@ -10,4 +10,4 @@ After the webserver has been started, the site is accessible under 'http://local
 To run the site on an external server, the steps for local deployment need to be followed and an SSL certificate to be provided and implemented into the webserver. If the connection is not an HTTPS connection, session cookies cannot be set and therefore it will be impossible to log in or sign up.
 
 ### External server (HTTP)
-The site can be run on en external server using HTTP, but this mode of operation is unsafe and not recommended. To enable, the two occurences of 'crypto.randomUUID()' in /src/js/api.js need to be replaced with '"" + Math.random()'.
+The site can be run on en external server using HTTP, but this is bad practice. Since there is no actual back-end, this mode of operation may be used for testing purposes. To enable, the two occurences of 'crypto.randomUUID()' in /src/js/api.js need to be replaced with '"" + Math.random()'.
