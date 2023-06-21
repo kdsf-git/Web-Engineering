@@ -1,3 +1,4 @@
+
 /* navbar.css */
 #navbar {
     background-color: #fff;
@@ -71,4 +72,8 @@
 
 body {
     font-family: "Open Sans", sans-serif;
+}
+
+#home-button:hover img {
+    transform: scale(102%);
 }
