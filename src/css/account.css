@@ -4,6 +4,10 @@ h1 {
     text-align: center;
 }
 
+div {
+    padding-left: 10px
+}
+
 #name-div {
     padding-left: 1%;
     padding-top: 10px;
@@ -23,6 +27,7 @@ h1 {
 #password-div {
     padding-left: 1%;
     padding-bottom: 10px;
+    margin-top: 10px
 }
 
 #button-div {
@@ -63,7 +68,7 @@ label {
     width: 100px;
 }
 
-#content-div {
+#page-content {
     border-width: 1px;
 	border-style: solid;
     border-radius: 20px;

@@ -4,7 +4,7 @@ html {
     background-color: #D8D8D8;
 }
 
-#not-navbar {
+#page-content {
     display: flex;
     flex-wrap: nowrap;
     padding-top: 20px;
@@ -17,7 +17,7 @@ html {
     width: 10%;
     height: 260px;
     padding-bottom: 10px;
-    padding-right: 50px;
+    padding-right: 10px;
     border-width: 1px;
 	border-style: solid;
     border-radius: 20px;
@@ -47,14 +47,13 @@ html {
 }
 
 .product div {
-    width: 100%;
+    width: 50%;
     align-self: center;
     justify-content: left;
 }
 
 .product img {
     padding: 10px;
-    box-sizing: border-box;
     width: 30%;
 }
 
