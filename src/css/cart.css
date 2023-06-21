@@ -58,6 +58,21 @@ label {
     background-color: #fff;
 }
 
+#item-div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#shipping-div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#totaltotal-div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 #page-content {
     display: flex;
     flex-wrap: wrap;
